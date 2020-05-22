@@ -12,11 +12,13 @@ package com.example.myapplication655;
         import static android.widget.Toast.makeText;
 
 public class MainActivity extends AppCompatActivity {
+    MyReceiver obj;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        obj = new MyReceiver(MainActivity.this);
 
     }
     public void Start(View view) {

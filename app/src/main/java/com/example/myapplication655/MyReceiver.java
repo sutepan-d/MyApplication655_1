@@ -5,13 +5,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
-
 import static android.widget.Toast.makeText;
 
-public class MyReceiver extends BroadcastReceiver {
 
-    Toast toast = makeText(getApplicationContext(), "Да", Toast.LENGTH_SHORT);
-    Toast toast1 = makeText(getApplicationContext(), "Нет", Toast.LENGTH_SHORT);
+public class MyReceiver extends BroadcastReceiver {
+    Context context;
+    public MyReceiver(Context context){
+        this.context = context;
+    }
+
+    Toast toast = makeText(context, "Да", Toast.LENGTH_SHORT);
+    Toast toast1 = makeText(context, "Нет", Toast.LENGTH_SHORT);
+
     @Override
     public void onReceive(Context context, Intent intent) {
         Log.i("inform", "onReceive is started");
